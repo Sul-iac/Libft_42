@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 21:30:47 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/01 23:40:59 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/03 11:21:32 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t len)
 	return (dst);
 }
 
-/*int main(void)
+int main(void)
 {
 	int i;
 	unsigned char src[] = "110001100 00111101";
@@ -38,4 +38,4 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t len)
 	ft_memcpy(dst, src, n);
 	printf("%s\n", dst);
 	printf("%s", src);
-}*/
+}
