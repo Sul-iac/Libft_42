@@ -11,7 +11,7 @@ ft_isascii.c ft_isdigit.c ft_isprint.c ft_strchr.c\
 ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c\
 ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strstr.c\
 ft_tolower.c ft_toupper.c ft_memset.c ft_bzero.c\
-ft_memcpy.c
+ft_memcpy.c ft_memmove.c
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRC_FILES:.c=.o))
 
 .PHONY: all clean fclean re
