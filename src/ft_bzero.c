@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 20:26:28 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/01 21:18:07 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/04 00:04:01 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_bzero(void *b, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		bytes[i] = '0';
+		bytes[i] = 0;
 		i++;
 	}
 	return (b);

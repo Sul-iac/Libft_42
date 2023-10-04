@@ -28,7 +28,7 @@
 - [x] bzero 
 - [x] memcpy
 - [x] memmove
-- [ ] memcmp
+- [x] memcmp
 - [ ] calloc
   
 ---

@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:27:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/03 12:04:46 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/03 22:41:47 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_strlen(const char *str);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 //ft_strnstr
 int	*ft_strstr(const char *str, const char *to_find);
+//ft_memcmp
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
 
 
 ///////////////////// CHAR   
@@ -71,6 +73,9 @@ void	*ft_bzero(void *b, size_t len);
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t len);
 //ft_memmove
 void	*ft_memmove(void *dst, const void *src, size_t len);
+//ft_calloc
+void	*ft_calloc(size_t count, size_t size);
+
 
 
 #endif
