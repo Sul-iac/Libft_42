@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 18:52:44 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/23 21:17:18 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/04 10:50:38 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stddef.h>
 
-const char *ft_strnstr(const char *str, const char *to_find, size_t n)
+const char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	unsigned int	i;
 	unsigned int	j;

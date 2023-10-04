@@ -29,7 +29,7 @@
 - [x] memcpy
 - [x] memmove
 - [x] memcmp
-- [ ] calloc
+- [x] calloc
   
 ---
 #### Others
@@ -44,7 +44,7 @@
 - [ ] ft_putstr_fd
 - [ ] ft_putendl_fd
 - [ ] ft_putnbr_fd
-- [ ] 
+
 #### Bonuses
 - [ ] ft_lstnew
 - [ ] ft_lstadd_front
