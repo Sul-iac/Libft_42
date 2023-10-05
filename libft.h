@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:27:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/04 10:32:54 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/05 20:13:46 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 //ft_memchr
 void	*ft_memchr(const void *s, int c, size_t n);
-
-
-
+//ft_putchar_fd
+void	ft_putchar_fd(char c, int fd);
+//ft_putstr_fd
+void	ft_putstr_fd(char *s, int fd);
+//ft_putnbr_fd
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
