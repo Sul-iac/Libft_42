@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:27:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/05 20:13:46 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/06 00:38:50 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ char	*ft_strrchr(const char *str, int c);
 char	*ft_strdup(const char *str);
 //ft_strnstr
 char	*ft_strnstr(const char *str, const char *to_find, size_t n);
-
+//ft_itoa
+char	*ft_itoa(int n);
 
 ////////////////////// SIZE_T
 
@@ -83,5 +84,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 //ft_putnbr_fd
 void	ft_putnbr_fd(int n, int fd);
+//ft_putendl_fd
+void	ft_putendl_fd(char *s, int fd);
+
 
 #endif

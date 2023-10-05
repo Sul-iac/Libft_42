@@ -13,7 +13,7 @@ ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strstr.c\
 ft_tolower.c ft_toupper.c ft_memset.c ft_bzero.c\
 ft_memcpy.c ft_memmove.c ft_memcmp.c ft_calloc.c\
 ft_memchr.c ft_putchar_fd.c ft_putstr_fd.c\
-ft_putnbr_fd.c
+ft_putnbr_fd.c ft_putendl_fd.c ft_itoa.c
 OBJS = $(addprefix $(OBJ_PATH)/,$(SRC_FILES:.c=.o))
 
 .PHONY: all clean fclean re

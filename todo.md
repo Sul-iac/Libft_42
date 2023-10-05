@@ -38,12 +38,13 @@
 - [x] ft_putchar_fd
 - [x] ft_putstr_fd
 - [x] ft_putnbr_fd
-- [ ] ft_strtrim
-- [ ] ft_split
+- [x] ft_putendl_fd
 - [ ] ft_itoa
+- [ ] ft_strtrim
 - [ ] ft_strmapi
 - [ ] ft_striteri
-- [ ] ft_putendl_fd
+- [ ] ft_split
+
 
 
 #### Bonuses
