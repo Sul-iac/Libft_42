@@ -1,0 +1,8 @@
+cd ..
+make re
+cd test
+clang test.c -l ft -L .. -I ..
+printf "\e[45m------------------------------------TEST------------------------------------\e[0m"
+echo
+echo
+./a.out

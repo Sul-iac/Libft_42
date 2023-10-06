@@ -6,14 +6,14 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 23:53:10 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/25 12:29:20 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/06 17:51:18 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stddef.h>
 
-int	ft_strlen(const char *str)
+int		ft_strlen(const char *str)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+size_t		ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
