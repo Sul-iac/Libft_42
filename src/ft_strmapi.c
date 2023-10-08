@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 17:08:10 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/07 23:19:52 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/08 13:12:02 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/08 22:19:12 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include "../libft.h"
+#include <stdio.h>
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*str;
-	int		len;
-	int			i;
-	int			j;
+	unsigned int		i;
+	unsigned int		len;
+	char	*dup;
 
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	dup = (char *)malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+		return (NULL);
 	i = 0;
-	j = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(str) * (len + 1));
-	if(!(str))
-		return (NULL);
-	while (i < ft_strlen(s1))
+	while (s[i] != '\0')
 	{
-		str[i] = s1[i];
+		dup[i] = f(i, s[i]);
 		i++;
 	}
-	while (j < ft_strlen(s2))
-	{
-		str[i] = s2[j];
-		i++;
-		j++;
-	}
-	str[i] = '\0';
-	return (str);
+	dup[i] = '\0';
+	return (dup);
 }

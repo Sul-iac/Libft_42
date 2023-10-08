@@ -40,11 +40,10 @@
 - [x] ft_putnbr_fd
 - [x] ft_putendl_fd
 - [x] ft_itoa
-- [ ] ft_strtrim
-- [ ] ft_strmapi
-- [ ] ft_striteri
-- [ ] ft_split
-
+- [x] ft_strtrim
+- [x] ft_split
+- [x] ft_striteri
+- [x] ft_strmapi
 
 #### Bonuses
 - [ ] ft_lstnew

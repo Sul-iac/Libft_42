@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:27:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/06 17:26:14 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/08 13:43:49 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,14 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n);
 char	*ft_itoa(int n);
 //ft_strtrim
 char	*ft_strtrim(char const *s1, char const *set);
-
+//ft_split
+char	**ft_split(const char *s, char c);
+//ft_strjoin
+char	*ft_strjoin(const char *s1, const char *s2);
+//ft_substr
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+//ft_strmapi
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 ////////////////////// SIZE_T
 
@@ -89,6 +96,10 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 //ft_putendl_fd
 void	ft_putendl_fd(char *s, int fd);
+//ft_striteri
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+
 
 
 #endif

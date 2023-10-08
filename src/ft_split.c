@@ -6,16 +6,16 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 07:19:44 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/05 19:31:49 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/07 22:42:54 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "../libft.h"
+#include "libft.h"
 
-int		count_word(const char *str, char c)
+int		ft_word_count(const char *str, char c)
 {
 	int		i;
 	int 	count;
@@ -31,38 +31,54 @@ int		count_word(const char *str, char c)
 				i++;
 		}
 		else if (str[i] == c)
-		{
 				i++;
-		}
 	}
 	return (count);
 }
 
-int		word_len(const char *s, char c)
+int		ft_word_len(const char *str, char c, int j)
 {
 	int		i;
-	
+
 	i = 0;
-	while(s[i] != '\0' && s[i] != c)
+	while (str[i + j] != '\0' && str[i + j] != c)
 		i++;
 	return (i);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	unsigned int	i;
-	char			**spl;
-	char			*new_spl;
+	int		i;
+	int		j;
+	int		k;
+	int		wcnt;
+	int 	wlen;
+	char	**spl;
+
 	i = 0;
-	spl = (char **)malloc(sizeof(char *) * count_word + 1);
+	j = 0;
+	wcnt = ft_word_count(s, c);
+	spl = (char **)malloc(sizeof(char *) * (wcnt + 1));
 	if (spl == NULL || s == NULL)
 		return (NULL);
-	while (s[i] != '\0' && s[i] != c)
+	while (j < wcnt)
 	{
-		new_spl = (char *)malloc(sizeof(char) * word_len(s, c) + 1);
-		i++;
+		while(s[i] == c)
+			i++;
+		wlen = ft_word_len(s, c, i);
+		spl[j] = (char *)malloc(sizeof(char) * (wlen+ 1));
+		if(spl[j] == NULL)
+			return (NULL);
+		k = 0;
+		while (s[i] != '\0' && s[i] != c)
+		{
+			spl[j][k] = s[i];
+			i++;
+			k++;
+		}
+		spl[j][k] = '\0';
+		j++;
 	}
-	new_spl = '\0';
-	
-
+	spl[j] = NULL;
+	return (spl);
 }
