@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:27:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/08 13:43:49 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/11 10:27:14 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,23 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 
+///////////////////////STRUCT
+
+//ft_lstnew
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list 	*next;
+}					t_list;
+t_list	*ft_lstnew(void *content);
+
+//ft_lstadd_front
+typedef struct		s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:46:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/08 14:17:30 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/11 02:15:36 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,22 @@ int main(void)
 }*/
 
 ////////main ft_substr
-int main(void)
+/*int main(void)
 {
     char str[] = "FULL BULLSHIT";
     int start = 400;
     int len = 20;
     char *res = ft_substr(str, start, len);
     printf("%s", res);
+}*/
+
+int main(void)
+{
+    int *q;
+    q = malloc(sizeof(int));
+    *q = 42;
+    t_list *res;
+
+    res = ft_lstnew(q);
+    printf("%d", *((int *)res->content));
 }
