@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/01 21:30:47 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 16:04:05 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t len)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	size_t			i;
+	unsigned char	*byte_dst;
+	unsigned char	*byte_src;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	byte_dst = (unsigned char *)dst;
+	byte_src = (unsigned char *)src;
+	i = -1;
+	while (++i < len)
+		byte_dst[i] = byte_src[i];
+	return (dst);
 }

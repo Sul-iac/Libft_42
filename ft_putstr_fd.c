@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/05 19:32:54 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/05 19:41:15 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-int	main(void)
+void	ft_putstr_fd(char *s, int fd)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	int	i;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

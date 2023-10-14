@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/01 19:37:03 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/01 20:18:59 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
-int	main(void)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	unsigned int	i;
+	unsigned char	*bytes;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	bytes = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+	{
+		bytes[i] = (unsigned char)c;
+		i++;
+	}
+	return (b);
 }

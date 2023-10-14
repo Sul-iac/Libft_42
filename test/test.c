@@ -6,17 +6,18 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:46:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/11 02:15:36 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/14 00:58:45 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h> 
 #include <stdlib.h>
+#include <ctype.h>
 
 ////////ft_split main
 
-/*int main(void)
+int main(void)
 {
 	const char str[] = "Bonjour j'aimerais les cookies";
 	const char del = ' ';
@@ -34,7 +35,7 @@
     }
 
     return 0;
-}*/
+}
 /////////////fin split
 
 ////////////main ft_striteri
@@ -58,7 +59,6 @@ int main(void)
 {
     return c + 1;
 }
-
 int main(void)
 {
     char str[] = "Bonjour ca va ?";
@@ -77,8 +77,8 @@ int main(void)
     char *res = ft_substr(str, start, len);
     printf("%s", res);
 }*/
-
-int main(void)
+/////////////////////ft_lstnew
+/*int main(void)
 {
     int *q;
     q = malloc(sizeof(int));
@@ -87,4 +87,36 @@ int main(void)
 
     res = ft_lstnew(q);
     printf("%d", *((int *)res->content));
-}
+}*/
+////////////////////itoa
+
+/*int main(void)
+{
+    int c = -12345;
+    printf("%s", ft_itoa(c));
+}*/
+
+///////////////////ft_isprint
+/*int main(void)
+{
+    int i;
+
+    i = -1;
+    while (i < 530)
+    if (!!ft_isprint(i) != !!isprint(i))
+ 	{ 
+       	{
+ 			exit(0);
+ 		}
+ 		i++;
+ 	}
+ 	exit(1);
+}*/
+
+/*int main(void)
+{
+    char *str = "Bonjour";
+    char *str1 = " ca va?";
+    char *res = ft_strtrim(str, str1);
+    printf("%s", res);
+}*/

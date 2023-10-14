@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/01 20:26:28 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 16:49:17 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+void	*ft_bzero(void *b, size_t len)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	unsigned int	i;
+	unsigned char	*bytes;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	bytes = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+	{
+		bytes[i] = 0;
+		i++;
+	}
+	return (b);
 }

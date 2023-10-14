@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/09/20 23:07:01 by qbarron           #+#    #+#             */
+/*   Updated: 2023/09/24 00:33:04 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
-int	main(void)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	unsigned int	i;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	while (i < n)
+	{
+		if (s1[i] == '\0' && s2[i] == '\0')
+			return (0);
+		else if (s1[i] != s2[i])
+			return ((int)(unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
 }

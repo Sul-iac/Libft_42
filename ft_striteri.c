@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/08 12:40:49 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/08 13:08:43 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	int	i;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	while (s[0] != '\0')
+	{
+		f(i, s);
+		i++;
+		s++;
+	}
 }

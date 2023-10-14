@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/05 19:46:45 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 11:02:20 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-int	main(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
-
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd((n / 10), fd);
+	}
+	ft_putchar_fd(('0' + n % 10), fd);
 }
+
+/*int main(void)
+{
+	int n = -12345;
+	ft_putnbr_fd(n, 1);
+}*/

@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/09/23 16:13:29 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/13 22:43:46 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+char	*ft_strchr(const char *str, int c)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	int	i;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	if ((char)c == '\0')
+		return ((char *)&str[ft_strlen(str)]);
+	while (str[i] != '\0')
+	{
+		if (str[i] == (char)c)
+			return ((char *)&str[i]);
+		i++;
+	}
+	return (NULL);
 }

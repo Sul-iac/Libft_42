@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/09/25 12:49:25 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/13 21:22:15 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	main(void)
+char	*ft_strdup(const char *str)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	int		i;
+	int		len;
+	char	*dup;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	len = ft_strlen(str);
+	dup = (char *)malloc(sizeof(char) * len + 1);
+	if (dup == NULL)
+	{
+		dup = (char *)malloc(1);
+		if (dup == NULL)
+			return (NULL);
+		dup[0] = '\0';
+		return (dup);
+	}
+	while (str[i] != '\0')
+	{
+		dup[i] = str[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

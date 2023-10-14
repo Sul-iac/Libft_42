@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/09/23 12:33:19 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 16:48:24 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	unsigned int	i;
+	unsigned int	len;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	len = ft_strlen(src);
+	if (destsize > 0)
+	{
+		while (src[i] != '\0' && i < (destsize - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (len);
 }

@@ -1,24 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/11 10:27:41 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 07:40:26 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <string.h>
-
-int	main(void)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
-
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
 }

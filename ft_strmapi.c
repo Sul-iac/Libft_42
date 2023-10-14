@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/08 13:12:02 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/08 22:19:12 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	main(void)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	unsigned int	i;
+	unsigned int	len;
+	char			*dup;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	dup = (char *)malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		dup[i] = f(i, s[i]);
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

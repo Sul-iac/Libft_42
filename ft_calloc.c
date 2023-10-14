@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/03 19:56:17 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 16:45:15 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-int	main(void)
+void	*ft_calloc(size_t count, size_t size)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	void	*ptr;
+	size_t	len;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	len = count * size;
+	ptr = malloc(len);
+	if (ptr != NULL)
+		ft_bzero(ptr, len);
+	return (ptr);
 }

@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Maintest.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 15:18:21 by qbarron           #+#    #+#             */
-/*   Updated: 2023/09/22 18:47:20 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/04 17:57:29 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/12 15:32:12 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-int	main(void)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	const char	str[] = "J'aime les cookies";
-	const char	to_find[] = "les";
+	unsigned int	i;
+	unsigned int	slen;
+	char			*dest;
 
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s", strstr(str, to_find));
+	i = 0;
+	slen = ft_strlen(s);
+	if (start > slen)
+		return (ft_strdup(""));
+	dest = (char *)malloc(sizeof(char) * (len + 1));
+	if (dest == NULL)
+		return (NULL);
+	while (i < len && s[start + i] != '\0')
+	{
+		dest[i] = s[start + i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
