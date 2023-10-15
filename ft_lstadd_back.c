@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 12:16:07 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/15 12:39:44 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/15 13:44:20 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_lstadd_back(t_list **lst, t_list new)
 			*lst = new;
 		else
 		{
-			temp = ft_lstlast(*(lst)); //un peu comme un swap: on va au bout 
-			temp->next = new;			//de la liste et on dit que la prochaine node de list est new
+			temp = ft_lstlast(*(lst));
+			temp->next = new;
 		}
 	}
 }
