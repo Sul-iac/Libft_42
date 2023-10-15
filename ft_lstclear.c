@@ -6,22 +6,26 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 13:01:02 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/15 13:46:06 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/15 14:13:21 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*next;
+	t_list	*current;
 
-	if ((*lst) == NULL || del == NULL)
+	current = *lst;
+	if (!lst || !del)
 		return ;
-	while (*lst)
+	while (current)
 	{
-		next = (*lst)->content;
-		del((*lst)->content);
-		free(*lst);
-		*lst = next;
+		next = current->next;
+		del(current->content);
+		free(current);
+		current = next;
 	}
 	(*lst) = NULL;
 }

@@ -6,7 +6,7 @@
 #    By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 00:21:31 by qbarron           #+#    #+#              #
-#    Updated: 2023/10/15 13:37:37 by qbarron          ###   ########.fr        #
+#    Updated: 2023/10/15 14:27:30 by qbarron          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,13 +45,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rcs $@ $^
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
-
 bonus: $(BONUS_OBJS)
 	@ar rcs $(NAME) $^
 
-$(BONUS_OBJS): $(BONUS_SRCS)
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
 	$(CC) $(CFLAGS) -I$(INC_PATH) -o $@ -c $<
 
 $(OBJ_PATH):
