@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:46:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/14 00:58:45 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/14 16:14:18 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 ////////ft_split main
 
-int main(void)
+/*int main(void)
 {
 	const char str[] = "Bonjour j'aimerais les cookies";
 	const char del = ' ';
@@ -35,7 +35,7 @@ int main(void)
     }
 
     return 0;
-}
+}*/
 /////////////fin split
 
 ////////////main ft_striteri
@@ -120,3 +120,40 @@ int main(void)
     char *res = ft_strtrim(str, str1);
     printf("%s", res);
 }*/
+
+/*int main(void) 
+{
+    t_list *head = NULL;
+    t_list *new = (t_list *)malloc(sizeof(t_list));
+    new->content = "Bonjour comment ca va ?";
+    new->next = NULL;
+    ft_lstadd_front(&head, new);
+
+    printf("%s\n", (char *)head->content);
+
+    free(new);
+    return 0;
+}*/
+
+int main(void)
+{
+    t_list *head = NULL;
+    t_list *milieu = NULL;
+    t_list *avant_dernier = NULL;
+    t_list *fin = NULL;
+    int a = 42;
+    int b = 41;
+    int size;
+
+    head = (t_list *)malloc(sizeof(t_list));
+    milieu = (t_list *)malloc(sizeof(t_list));
+
+    head->content = (void *)&a;
+    head->next = milieu;
+
+    milieu->content = (void *)&b;
+    milieu->next = NULL;
+
+    size = ft_lstlast(head);
+    printf("%d\n", size);
+}

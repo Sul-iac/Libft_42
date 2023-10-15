@@ -6,7 +6,7 @@
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:27:06 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/13 23:17:22 by qbarron          ###   ########.fr       */
+/*   Updated: 2023/10/15 13:00:26 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,16 @@ typedef struct s_list
 
 t_list				*ft_lstnew(void *content);
 // ft_lstadd_front
-void				ft_lstadd_front(t_list **lst, t_list *new);
+void				ft_lstadd_front(t_list **alst, t_list *new);
+//ft_lstsize
+int					ft_lstsize(t_list *lst);
+//ft_lstlast
+t_list				*ft_lstlast(t_list *lst);
+//ft_lstadd_back
+t_list				ft_lstadd_back(t_list **lst, t_list *new);
+//ft_lstdelone
+void ft_lstdelone(t_list *lst, void (*del)(void*));
+//ft_lstclear
+void ft_lstclear(t_list **lst, void (*del)(void*));
 
 #endif

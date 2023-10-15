@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qbarron <qbarron@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 02:05:50 by qbarron           #+#    #+#             */
-/*   Updated: 2023/10/14 12:31:18 by qbarron          ###   ########.fr       */
+/*   Created: 2023/10/14 13:19:06 by qbarron           #+#    #+#             */
+/*   Updated: 2023/10/14 15:59:21 by qbarron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_lstsize(t_list *lst)
 {
+	int		i;
 	t_list	*node;
 
-	node = malloc(sizeof(t_list));
-	node->content = content;
-	node->next = NULL;
-	return (node);
+	i = 0;
+	node = lst;
+	while (node != NULL)
+	{
+		i++;
+		node = node->next;
+	}
+	return (i);
 }
